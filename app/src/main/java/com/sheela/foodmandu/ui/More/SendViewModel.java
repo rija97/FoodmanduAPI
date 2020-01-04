@@ -1,4 +1,4 @@
-package com.sheela.foodmandu.ui.send;
+package com.sheela.foodmandu.ui.More;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

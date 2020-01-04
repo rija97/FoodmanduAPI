@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
-
+    tools:context=".ui.More.LoginActivity">
     <TextView
 
         android:layout_width="match_parent"
@@ -15,11 +16,11 @@
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:hint="Email"
+        android:hint="Username"
         android:textSize="30dp" />
 
     <EditText
@@ -56,30 +57,28 @@
 
         <TextView
 
-            android:id="@+id/tvCreate"
+            android:id="@+id/tvCreatee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="Create Account"
             android:textSize="25sp" />
 
-
     </LinearLayout>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="30dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="OR"
-        android:textSize="30dp" />
+        android:text="OR"/>
 
     <Button
         android:id="@+id/btnFacebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#05ffb0"
+        android:background= "#05ffb0"
         android:text="login with facebook"
         android:textSize="30dp" />
 
