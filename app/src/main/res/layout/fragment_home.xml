@@ -4,6 +4,16 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/caral"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:radius="6dp"
+        app:pageColor="#ede4ed"
+        app:fillColor="#ede4ed"
+        app:slideInterval="3000"
+        app:strokeColor="#ede4ed"
+        app:strokeWidth="1dp"/>
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recycleview"
     android:layout_width="match_parent"

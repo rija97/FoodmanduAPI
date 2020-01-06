@@ -2,24 +2,45 @@ package com.sheela.foodmandu.model;
 
 
 public class User {
-    private int image_id;
-    private String firstname;
-    private String lastname;
-    private String email;
+//   private String image;
+    private String firstName;
+    private String lastName;
+//    private String email;
     private String username;
-    private int phoneno;
+    private String phone;
     private String password;
 
-
-
-    public User(String firstname, String lastname, String email, String username,int phoneno, String password) {
-        this.image_id = image_id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.username=username;
-        this.phoneno = phoneno;
+    public User( String firstName, String lastName, String username, String phone, String password) {
+//        this.image = image;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.phone = phone;
         this.password = password;
+    }
+
+//    public String getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getUsername() {
@@ -30,44 +51,12 @@ public class User {
         this.username = username;
     }
 
-    public int getImage_id() {
-        return image_id;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setImage_id(int image_id) {
-        this.image_id = image_id;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getPhoneno() {
-        return phoneno;
-    }
-
-    public void setPhoneno(int phoneno) {
-        this.phoneno = phoneno;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getPassword() {
