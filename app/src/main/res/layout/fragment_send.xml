@@ -42,13 +42,15 @@
         android:textSize="30dp"
         android:layout_marginTop="30dp"
         android:text="FAQs"/>
-    <Button
-        android:id="@+id/btnlogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="LOGIN"
-        android:textSize="30dp"
-        android:background="@color/colorPrimary"/>
+
+  <Button
+      android:id="@+id/btnlogin"
+      android:layout_width="344dp"
+      android:layout_height="64dp"
+      android:layout_gravity="center"
+      android:layout_marginTop="30dp"
+      android:background="#8E2323"
+      android:text="LOGIN"
+      android:textSize="30dp" />
 </LinearLayout>
 

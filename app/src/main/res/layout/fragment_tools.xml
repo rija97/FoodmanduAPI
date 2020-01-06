@@ -33,10 +33,11 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
+        android:layout_width="244dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#d5f4e6"
+        android:background="#8E2323"
         android:text="Login"
         android:textSize="30dp" />
 
@@ -47,7 +48,7 @@
 
         <TextView
 
-            android:id="@+id/tvAdult"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forget Password?"
@@ -56,7 +57,7 @@
 
         <TextView
 
-            android:id="@+id/tvChildren"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -79,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#05ffb0"
+        android:background= "#2B4F81"
         android:text="login with facebook"
         android:textSize="30dp" />
 
@@ -88,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#80ced6"
+        android:background="#8E2323"
         android:text="login with Google"
         android:textSize="30dp" />
 
