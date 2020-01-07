@@ -5,14 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,13 +57,17 @@ CarouselView carouselView;
 
 
         List<Contacts> contactsList = new ArrayList<>();
-         contactsList.add(new Contacts("1", R.drawable.fonepay));
-        contactsList.add(new Contacts("2", R.drawable.bhaktapur));
-        contactsList.add(new Contacts("3", R.drawable.saturday));
-        contactsList.add(new Contacts("4", R.drawable.happylunch));
+         contactsList.add(new Contacts("Restaurant",R.drawable.res));
+        contactsList.add(new Contacts("Liquors",R.drawable.liquor));
+        contactsList.add(new Contacts("Bakeries",R.drawable.cup));
+        contactsList.add(new Contacts("Refreshment",R.drawable.ref));
+        contactsList.add(new Contacts("Organic",R.drawable.o));
+//        contactsList.add(new Contacts("2", R.drawable.bhaktapur));
+//        contactsList.add(new Contacts("3", R.drawable.saturday));
+//        contactsList.add(new Contacts("4", R.drawable.happylunch));
         ContactsAdapter contactsAdapter = new ContactsAdapter(getContext(),contactsList);
         recyclerView.setAdapter(contactsAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         return view;
     }
 }
