@@ -1,20 +1,17 @@
 const mongoose = require('mongoose');
 
 const foodSchema = new mongoose.Schema({
-    item: {
+    name: {
         type: String,
         required:true
-    }
-});
-const locationSchema = new mongoose.Schema({
-    location: {
-        type: String,
-        required:true
-    }
-});
-const ResturantsSchema = new mongoose.Schema({
+    },
 
-    name:{
+    price: {
+        type: String,
+        required:true
+    },
+
+    itemtype:{
         type:String,
         required:true
     },
@@ -22,11 +19,11 @@ const ResturantsSchema = new mongoose.Schema({
         type:String,
         required:false
     },
-  
-
-    location:[locationSchema],
     
-    food: [foodSchema]
+    food: {
+        type:String,
+        required:false
+    }
 },{timestamps:true});
 
-module.exports = mongoose.model('Resturants',ResturantsSchema);
+module.exports = mongoose.model('spices',foodSchema);

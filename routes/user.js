@@ -7,32 +7,32 @@ const router = express.Router();
 
 
 router.post('/register',(req, res, next)=>{
+    console.log(req.body);
 
     User.findOne({username:req.body.username})
     .then((user) =>{
-    
         if (user != null){
             let err = new Error('Username already exits');
             err.status = 401;
             return next(err);
-    
         }
-                bcrypt.hash(req.body.password, 10, function(err,hash){
+        bcrypt.hash(req.body.password, 10, function(err,hash){
             if(err){
                 throw new Error('Could not encrypt password ');
             }
             User.create({ 
-                firstname:req.body.firstName,
-                lastname:req.body.lastName,
-                phonenumber: req.body.phoneNumber, 
+                firstname:req.body.firstname,
+                lastname:req.body.lastname,
+                phonenumber: req.body.phonenumber, 
                 username: req.body.username,
-                password: hash
+                password: hash,
+                image:req.body.image
             }).then((user) =>{
                 let token = jwt.sign({userId: user._id}, process.env.SECRET);
                 res.json({status: "Signup Success!", token: token});
-            })
-        }).catch(next);
-    })
+            }).catch(next)
+        })
+    }).catch(next);
     });
 
     router.post('/login', (req, res, next) => {
@@ -59,7 +59,16 @@ router.post('/register',(req, res, next)=>{
 
 
     router.get('/me', auth.verifyUser, (req, res, next)=>{
-        res.json({firstname: req.user.firstname, lastname: req.user.lastname,PhoneNumber: req.user.phonenumber, UserName: req.user.username })
+        console.log(req.user);
+        res.json(req.user);
+        // res.json({firstname: req.user.firstname, lastname: req.user.lastname,PhoneNumber: req.user.phonenumber, UserName: req.user.username })
+        //})
+    });
+    router.put('/me',auth.verifyUser,(req,res,next)=>{
+        User.findByIdAndUpdate(req.user._id,{$set:req.body},{new:true})
+        .then((user)=> {
+            res.json({firstname:req.user.firstname, lastname:req.user.lastname,phonenumber:req.user.phonenumber, username:req.user.username,image:req.user.image})
         })
+    })
     
     module.exports = router;

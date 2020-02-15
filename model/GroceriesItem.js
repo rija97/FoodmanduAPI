@@ -6,7 +6,7 @@ const SuperSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    location:{
+    price:{
         type:String,
         required:true
     },
@@ -24,4 +24,4 @@ const SuperSchema = new mongoose.Schema({
     }
 },{timestamps:true});
 
-module.exports = mongoose.model('supers',SuperSchema);
+module.exports = mongoose.model('groceriesitem',SuperSchema);

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const sweet = require('../model/sweet');
+const sweet = require('../model/VegetablesAPI');
 
 router.route('/')
 .get((req,res,next)=>{
@@ -17,16 +17,23 @@ sweet.create(req.body)
 }).catch(next);
 });
 
-router.route('/:id')
+router.route('/:id/foods')
 .get((req,res,next)=>{
-    sweet.findById(req.params.id)
+    VegetablesAPI.findById(req.params.id)
     .then((sweets) =>{
-    res.json(sweets);
+    res.json(sweets.food);
 }).catch(next);
 })
 
 .post((req,res)=>{
-    res.send("Not Supported");
+    VegetablesAPI.findById(req.params.id)
+    .then((sweet) =>{
+        sweet.food.push(req.body);
+            sweet.save()
+        .then((sweet) => {
+    res.json(sweet);
+    })
+}).catch(next);
 });
 
 module.exports = router;

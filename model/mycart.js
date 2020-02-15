@@ -9,7 +9,7 @@ const foodSchema = new mongoose.Schema({
 
 const NewMembers = new mongoose.Schema({
 
-    image: {
+    user: {
         type:String,
         required:false
     },
@@ -17,18 +17,12 @@ const NewMembers = new mongoose.Schema({
         type:String,
         required:true
     },
-    location:{
+    price:{
         type:String,
         required:true
     },
-    food: {
-        type:String,
-        required:true
-    },
-    itemType: {
-        type:String,
-        required:false
-    },
+    food: [foodSchema]
+  
 },{timestamps:true});
 
-module.exports = mongoose.model('members',NewMembers);
+module.exports = mongoose.model('mycart',NewMembers);

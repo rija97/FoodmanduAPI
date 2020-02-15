@@ -4,7 +4,11 @@ name: {
     type: String,
     required: true
 },
-type: {
+price: {
+    type: String,
+    required: true
+},
+itemtype:{
     type: String,
     required: true
 },
@@ -12,6 +16,10 @@ image: {
     type:String,
     required:false
 },
+food: {
+    type:String,
+    required:false
+}
 },{timestamps:true});
 
-module.exports = mongoose.model('Sweet',sweetSchema);
+module.exports = mongoose.model('VegetablesAPI',sweetSchema);
